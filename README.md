@@ -1,4 +1,4 @@
-# Private VM Accessing Internet using Cloud NAT (Terraform)
+# Private VM Accessing Internet using Cloud NAT
 
 ## Scenario Overview
 
@@ -34,35 +34,32 @@ It performs source NAT translation:
 ## Deployment Steps
 
 1. Configure project:
-   gcloud config set project YOUR_PROJECT_ID
+      gcloud config set project YOUR_PROJECT_ID
 
 2. Initialize Terraform:
-   terraform init
+      terraform init
 
 3. Review plan:
-   terraform plan
+      terraform plan
 
 4. Deploy:
-   terraform apply
+      terraform apply
 
 ## SSH Access
 
 Use IAP tunnel:
-
-gcloud compute ssh private-vm   --zone=asia-south1-a   --tunnel-through-iap
+      gcloud compute ssh private-vm --zone=asia-south1-a --tunnel-through-iap
 
 ## Test Internet Connectivity
 
 Inside VM:
-
-curl ifconfig.me
-sudo apt update
+      curl ifconfig.me
+      sudo apt update
 
 If successful, Cloud NAT is working.
 
 ## Cleanup
-
-terraform destroy
+      terraform destroy
 
 ## Production Improvements
 
@@ -75,3 +72,6 @@ terraform destroy
 ---
 
 This repository demonstrates a secure enterprise-style outbound connectivity pattern in Google Cloud.
+
+## Author
+Mohd Sarfaraz Alam
